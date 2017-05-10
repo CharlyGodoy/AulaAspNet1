@@ -3,7 +3,7 @@
     
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Cabecalho" runat="server">
-    <asp:TextBox ID="txtDisplay" runat="server" Text="Calculadora"></asp:TextBox>    
+    <asp:TextBox ID="TtxtDisplay" runat="server" Text="Calculadora"></asp:TextBox>    
 
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="Principal" runat="server">
