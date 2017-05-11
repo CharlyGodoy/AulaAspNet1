@@ -9,9 +9,10 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="Principal" runat="server">
     
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-3"></div>
+        <div class="col-md-6" >
     <br />
-    <asp:Button ID="btn1" runat="server" Text="1" OnClick="btn1_Click" /> 
+    <asp:Button ID="btn1" runat="server" Text="1" OnClick="btn1_Click" CssClass="btn btn-primary"/> 
     <asp:Button ID="btn2" runat="server" Text="2" OnClick="btn2_Click"/>
     <asp:Button ID="btn3" runat="server" Text="3" OnClick="btn3_Click"/>
     <br />
@@ -28,6 +29,7 @@
     <asp:Button ID="btnIgual" runat="server" Text="=" OnClick="btnIgual_Click"/>
     <asp:Button ID="btnMais" runat="server" Text="+" OnClick="btnMais_Click"/>
     </div>
+        <div class="col-md-3"></div>
         </div>
 
 </asp:Content>

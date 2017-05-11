@@ -18,57 +18,57 @@ namespace Calculadora
 
         protected void btn1_Click(object sender, EventArgs e)
         {
-            TtxtDysplay.Text += "1";
+            TtxtDisplay.Text += "1";
         }
 
         protected void btn2_Click(object sender, EventArgs e)
         {
-            TtxtDysplay.Text += "2";
+            TtxtDisplay.Text += "2";
         }
 
         protected void btn3_Click(object sender, EventArgs e)
         {
-            TtxtDysplay.Text += "3";
+            TtxtDisplay.Text += "3";
         }
 
         protected void btn4_Click(object sender, EventArgs e)
         {
-            TtxtDysplay.Text += "4";
+            TtxtDisplay.Text += "4";
         }
 
         protected void btn5_Click(object sender, EventArgs e)
         {
-            TtxtDysplay.Text += "5";
+            TtxtDisplay.Text += "5";
         }
 
         protected void btn6_Click(object sender, EventArgs e)
         {
-            TtxtDysplay.Text += "6";
+            TtxtDisplay.Text += "6";
         }
 
         protected void btn7_Click(object sender, EventArgs e)
         {
-            TtxtDysplay.Text += "7";
+            TtxtDisplay.Text += "7";
         }
 
         protected void btn8_Click(object sender, EventArgs e)
         {
-            TtxtDysplay.Text += "8";
+            TtxtDisplay.Text += "8";
         }
 
         protected void btn9_Click(object sender, EventArgs e)
         {
-            TtxtDysplay.Text += "9";
+            TtxtDisplay.Text += "9";
         }
 
         protected void btnVirgula_Click(object sender, EventArgs e)
         {
-            TtxtDysplay.Text += ",";
+            TtxtDisplay.Text += ",";
         }
 
         protected void btn0_Click(object sender, EventArgs e)
         {
-            TtxtDysplay.Text += "0";
+            TtxtDisplay.Text += "0";
         }
 
         protected void btnIgual_Click(object sender, EventArgs e)
