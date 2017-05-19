@@ -11,7 +11,21 @@ namespace Aula1805
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                txtValor1.Text = ViewState["Valor1"].ToString();
+                txtValor2.Text = ViewState["Valor2"].ToString();
+                txtResultaDO.Text = ViewState["Resultado"].ToString();
+            }
+        }
 
+        protected void btnSomar_Click(object sender, EventArgs e)
+        {
+            double resultado = Convert.ToDouble(txtValor1.Text) + Convert.ToDouble(txtValor2.Text);
+
+            ViewState.Add("Valor1", txtValor1.Text);
+            ViewState.Add("Valor2", txtValor2.Text);
+            ViewState.Add("Resultado", resultado);
         }
     }
 }
