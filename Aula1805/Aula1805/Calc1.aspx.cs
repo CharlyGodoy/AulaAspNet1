@@ -11,11 +11,9 @@ namespace Aula1805
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            if (IsPostBack)
             {
-                txtValor1.Text = ViewState["Valor1"].ToString();
-                txtValor2.Text = ViewState["Valor2"].ToString();
-                txtResultaDO.Text = ViewState["Resultado"].ToString();
+
             }
         }
 
@@ -26,6 +24,17 @@ namespace Aula1805
             ViewState.Add("Valor1", txtValor1.Text);
             ViewState.Add("Valor2", txtValor2.Text);
             ViewState.Add("Resultado", resultado);
+
+            txtValor1.Text = ViewState["Valor1"].ToString();
+            txtValor2.Text = ViewState["Valor2"].ToString();
+            txtResultaDO.Text = ViewState["Resultado"].ToString();
+        }
+
+        protected void btnIgual_Click(object sender, EventArgs e)
+        {
+            Session["Valor1"] = txtValor1.Text;
+            Session["Valor2"] = txtValor2.Text;
+            Response.Redirect("~/Calc2.aspx");
         }
     }
 }

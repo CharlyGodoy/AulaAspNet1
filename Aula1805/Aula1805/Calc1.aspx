@@ -25,7 +25,7 @@
                 </div>
                 <div class="col-md-2" style="margin-top:20px;">
                     <asp:Button ID="btnSomar" runat="server" Text="+" OnClick="btnSomar_Click" />
-                    <asp:Button ID="btnIgual" runat="server" Text="=" />
+                    <asp:Button ID="btnIgual" runat="server" Text="=" OnClick="btnIgual_Click" />
                 </div>
             </div>
         </ContentTemplate>
