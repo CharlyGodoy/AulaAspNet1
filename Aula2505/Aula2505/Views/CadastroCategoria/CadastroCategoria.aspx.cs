@@ -29,7 +29,7 @@ namespace Aula2505.Views.CadastroCategoria
             CategoriasController.Adicionar(categoria);
                 txtNome.Text = string.Empty;
                 txtDescricao.Text = string.Empty;
-                Response.Redirect("~/CadastroCategoria.aspx");
+                Response.Redirect("~/Views/CadastroCategoria/CadastroCategoria");
         }
 
         protected void btnCancelar_Click(object sender, EventArgs e)
