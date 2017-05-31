@@ -12,6 +12,14 @@
     <asp:CheckBox ID="cbAtivo" runat="server" />
     <asp:Label ID="lblAtivo" runat="server" Text="Ativo"></asp:Label>
     <br />
-    <asp:Button ID="btnSalvar" runat="server" Text="Salvar" OnClick="btnSalvar_Click" />
-    <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" OnClick="btnCancelar_Click" />
+    <asp:Button ID="btnAdd" runat="server" Text="Adicionar" OnClick="btnSalvar_Click" />
+    <asp:Button ID="btnLimpar" runat="server" Text="Limpar" OnClick="btnCancelar_Click" />
+    <br />
+    <asp:Button ID="btnLocalizar" runat="server" Text="Localizar" OnClick="btnLocalizar_Click" />
+    <asp:Button ID="btnEditar" runat="server" Text="Editar" OnClick="btnEditar_Click" />
+    <br />
+    <asp:Button ID="btnExcluir" runat="server" Text="Excluir" OnClick="btnExcluir_Click" />
+    <asp:Button ID="btnListar" runat="server" Text="Listar" OnClick="btnListar_Click" />
+    <br />
+    <asp:GridView ID="gdCategorias" runat="server"></asp:GridView>
 </asp:Content>
