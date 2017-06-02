@@ -2,13 +2,13 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 06/01/2017 20:52:15
+-- Date Created: 06/01/2017 22:14:21
 -- Generated from EDMX file: C:\Asp.Net\CG\Aula\Trabalho0106\Trabalho0106\Models\Contexto.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
 GO
-USE [Entities (Trabalho0106)];
+USE [Base];
 GO
 IF SCHEMA_ID(N'dbo') IS NULL EXECUTE(N'CREATE SCHEMA [dbo]');
 GO
@@ -38,7 +38,7 @@ GO
 
 -- Creating table 'Genero'
 CREATE TABLE [dbo].[Genero] (
-    [Id] int  NOT NULL,
+    [Id] int IDENTITY(1,1) NOT NULL,
     [Nome] nvarchar(50)  NULL,
     [Descricao] nvarchar(50)  NULL
 );
@@ -46,7 +46,7 @@ GO
 
 -- Creating table 'Jogo'
 CREATE TABLE [dbo].[Jogo] (
-    [Id] int  NOT NULL,
+    [Id] int IDENTITY(1,1) NOT NULL,
     [Nome] nvarchar(50)  NULL,
     [Descricao] nvarchar(50)  NOT NULL,
     [Lancamento] nvarchar(50)  NOT NULL,
