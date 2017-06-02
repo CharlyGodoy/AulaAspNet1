@@ -7,7 +7,7 @@
       <Diagram DiagramId="12965b0aa13a460a977bc42aa1555524" Name="Diagram1">
         <EntityTypeShape EntityType="Model.Genero" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.Jogo" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <AssociationConnector Association="Model.FK_Jogo_Genero" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.GeneroJogo" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

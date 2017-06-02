@@ -14,8 +14,17 @@ namespace Trabalho0106.Models
     
     public partial class Genero
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Genero()
+        {
+            this.Jogos = new HashSet<Jogo>();
+        }
+    
         public int Id { get; set; }
         public string Nome { get; set; }
         public string Descricao { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Jogo> Jogos { get; set; }
     }
 }

@@ -141,13 +141,11 @@
       <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
     </Reference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
-    <Content Include="App_Data\Database.mdf" />
-    <Content Include="App_Data\Database_log.ldf">
-      <DependentUpon>Database.mdf</DependentUpon>
-    </Content>
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -172,6 +170,7 @@
       <DependentUpon>Contexto.edmx</DependentUpon>
       <LastGenOutput>Contexto.Context.cs</LastGenOutput>
     </Content>
+    <Content Include="Models\Contexto.edmx.sql" />
     <Content Include="Models\Contexto.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Contexto.edmx</DependentUpon>

@@ -12,7 +12,7 @@ namespace Trabalho0106.Controllers
 
         public static void Adicionar(Jogo jogo)
         {
-            if(GeneroBean.LocalizarPorID(jogo.IdGenero) != null)
+            if (GeneroBean.LocalizarPorID(jogo.GeneroId) != null)
             {
                 contexto.Jogo.Add(jogo);
                 contexto.SaveChanges();

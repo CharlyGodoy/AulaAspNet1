@@ -14,20 +14,12 @@ namespace Trabalho0106.Models
     
     public partial class Jogo
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Jogo()
-        {
-            this.Jogo1 = new HashSet<Jogo>();
-        }
-    
         public int Id { get; set; }
         public string Nome { get; set; }
         public string Descricao { get; set; }
         public string Lancamento { get; set; }
-        public int IdGenero { get; set; }
+        public int GeneroId { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Jogo> Jogo1 { get; set; }
-        public virtual Jogo Jogo2 { get; set; }
+        public virtual Genero Genero { get; set; }
     }
 }

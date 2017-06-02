@@ -11,11 +11,12 @@
     <br />
     <asp:TextBox ID="txtDescricaoG" runat="server"></asp:TextBox>
     <br />
+    <br />
     <asp:Button ID="btnAddG" runat="server" Text="Adicionar" OnClick="btnAddG_Click" ValidationGroup="ValidGenero" />
     <asp:Button ID="btnLimparG" runat="server" Text="Limpar" OnClick="btnLimparG_Click" ValidationGroup="ValidGenero"/>
     <asp:Button ID="btnLocalizarG" runat="server" Text="Localizar" OnClick="btnLocalizarG_Click" ValidationGroup="ValidGenero"/>
-    <asp:Button ID="btnEditarG" runat="server" Text="Editar" OnClick="btnEditarG_Click" ValidationGroup="ValidGenero"/>
-    <asp:Button ID="btnExcluirG" runat="server" Text="Excluir" OnClick="btnExcluirG_Click" ValidationGroup="ValidGenero"/>
+    <asp:Button ID="btnEditarG" runat="server" Text="Editar" OnClick="btnEditarG_Click" ValidationGroup="ValidGenero" Enabled="False"/>
+    <asp:Button ID="btnExcluirG" runat="server" Text="Excluir" OnClick="btnExcluirG_Click" ValidationGroup="ValidGenero" Enabled="False"/>
     <br />
     <br />
     <asp:GridView ID="gdGenero" runat="server"></asp:GridView>
@@ -41,7 +42,10 @@
     <br />
     <asp:TextBox ID="txtGeneroJ" runat="server"></asp:TextBox>
     <br />
-
+    <br />
+    <asp:DropDownList ID="ddpGenero" runat="server"></asp:DropDownList> Só funciona para o botão Adicionar
+    <br />
+    <br />
     <asp:Button ID="btnAddJ" runat="server" Text="Adicionar" OnClick="btnAddJ_Click" ValidationGroup="ValJogo"/>
     <asp:Button ID="btnLimparJ" runat="server" Text="Limpar" OnClick="btnLimparJ_Click" ValidationGroup="ValJogo"/>
     <asp:Button ID="btnLocalizarJ" runat="server" Text="Localizar" OnClick="btnLocalizarJ_Click" ValidationGroup="ValJogo"/>
