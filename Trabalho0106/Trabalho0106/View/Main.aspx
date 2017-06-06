@@ -40,17 +40,14 @@
     <br />
         <asp:Label ID="lblGeneroEscolhido" runat="server" Text="Genero"></asp:Label>
     <br />
-    <asp:TextBox ID="txtGeneroJ" runat="server"></asp:TextBox>
-    <br />
-    <br />
-    <asp:DropDownList ID="ddpGenero" runat="server"></asp:DropDownList> Só funciona para o botão Adicionar
+    <asp:DropDownList ID="ddpGenero" runat="server" DataTextField="Nome" DataValueField="Id"></asp:DropDownList> Só funciona para o botão Adicionar
     <br />
     <br />
     <asp:Button ID="btnAddJ" runat="server" Text="Adicionar" OnClick="btnAddJ_Click" ValidationGroup="ValJogo"/>
     <asp:Button ID="btnLimparJ" runat="server" Text="Limpar" OnClick="btnLimparJ_Click" ValidationGroup="ValJogo"/>
     <asp:Button ID="btnLocalizarJ" runat="server" Text="Localizar" OnClick="btnLocalizarJ_Click" ValidationGroup="ValJogo"/>
-    <asp:Button ID="btnEditarJ" runat="server" Text="Editar" OnClick="btnEditarJ_Click" ValidationGroup="ValJogo"/>
-    <asp:Button ID="btnExcluirJ" runat="server" Text="Excluir" OnClick="btnExcluirJ_Click" ValidationGroup="ValJogo"/>
+    <asp:Button ID="btnEditarJ" runat="server" Text="Editar" OnClick="btnEditarJ_Click" ValidationGroup="ValJogo" Enabled="False"/>
+    <asp:Button ID="btnExcluirJ" runat="server" Text="Excluir" OnClick="btnExcluirJ_Click" ValidationGroup="ValJogo" Enabled="False"/>
     <br />
     <br />
     <asp:GridView ID="gdJogo" runat="server"></asp:GridView>

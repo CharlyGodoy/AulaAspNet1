@@ -16,7 +16,13 @@ namespace Trabalho0106.View
         {
             CarregarGridGenero();
             CarregarGridJogo();
+            if (!IsPostBack)
+            {
+                PreencherComboBox();
+            }
         }
+
+        //Cadastro de genero
 
         protected void btnAddG_Click(object sender, EventArgs e)
         {
@@ -43,14 +49,22 @@ namespace Trabalho0106.View
         protected void btnLocalizarG_Click(object sender, EventArgs e)
         {
             string nome = txtNomeG.Text;
+            try
+            {
+                txtNomeG.Text = GeneroBean.LocalizarPorNome(nome).Nome;
+                txtDescricaoG.Text = GeneroBean.LocalizarPorNome(nome).Descricao;
+                Session.Add("genero", GeneroBean.LocalizarPorNome(nome));
 
-            txtNomeG.Text = GeneroBean.LocalizarPorNome(nome).Nome;
-            txtDescricaoG.Text = GeneroBean.LocalizarPorNome(nome).Descricao;
-            Session.Add("genero", GeneroBean.LocalizarPorNome(nome));
-
-            btnAddG.Enabled = false;
-            btnEditarG.Enabled = true;
-            btnExcluirG.Enabled = true;
+                btnAddG.Enabled = false;
+                btnEditarG.Enabled = true;
+                btnExcluirG.Enabled = true;
+            }
+            catch (Exception)
+            {
+                string msg = "Não foi possivel encontrar nenhum genero com o nome: " + nome;
+                Response.Write("<script>alert('"+ msg +"');</script>");
+            }
+            
         }
 
         protected void btnEditarG_Click(object sender, EventArgs e)
@@ -89,13 +103,13 @@ namespace Trabalho0106.View
                 Nome = txtNomeJ.Text,
                 Descricao = txtDescricaoJ.Text,
                 Lancamento = txtLancamento.Text,
-                GeneroId = Convert.ToInt32(GeneroBean.LocalizarPorNome(ddpGenero.SelectedItem.Text).Id)
+                GeneroId = GeneroBean.LocalizarPorID(Convert.ToInt32(ddpGenero.SelectedValue)).Id
                 //GeneroId = Convert.ToInt32(txtGeneroJ.Text)
             };
             JogoBean.Adicionar(jogo);
 
             LimparCamposJogo();
-            CarregarGridGenero();
+            CarregarGridJogo();
 
         }
 
@@ -112,16 +126,25 @@ namespace Trabalho0106.View
         {
             string nome = txtNomeJ.Text;
 
-            txtNomeJ.Text = JogoBean.LocalizarPorNome(nome).Nome;
-            txtDescricaoJ.Text = JogoBean.LocalizarPorNome(nome).Descricao;
-            txtLancamento.Text = JogoBean.LocalizarPorNome(nome).Lancamento;
-            txtGeneroJ.Text = Convert.ToString(JogoBean.LocalizarPorNome(nome).GeneroId);
+            try
+            {
+                txtNomeJ.Text = JogoBean.LocalizarPorNome(nome).Nome;
+                txtDescricaoJ.Text = JogoBean.LocalizarPorNome(nome).Descricao;
+                txtLancamento.Text = JogoBean.LocalizarPorNome(nome).Lancamento;
+                //txtGeneroJ.Text = Convert.ToString(JogoBean.LocalizarPorNome(nome).GeneroId);
+                ddpGenero.SelectedValue = Convert.ToString(JogoBean.LocalizarPorNome(nome).GeneroId);
 
-            Session.Add("Jogo", JogoBean.LocalizarPorNome(nome));
+                Session.Add("Jogo", JogoBean.LocalizarPorNome(nome));
 
-            btnAddJ.Enabled = false;
-            btnEditarJ.Enabled = true;
-            btnExcluirJ.Enabled = true;
+                btnAddJ.Enabled = false;
+                btnEditarJ.Enabled = true;
+                btnExcluirJ.Enabled = true;
+            }
+            catch (Exception)
+            {
+                string msg = "Não foi possivel encontrar nenhum jogo com o nome: " + nome;
+                Response.Write("<script>alert('" + msg + "');</script>");
+            }
         }
 
         protected void btnEditarJ_Click(object sender, EventArgs e)
@@ -130,11 +153,13 @@ namespace Trabalho0106.View
             jogoEditar.Nome = txtNomeJ.Text;
             jogoEditar.Descricao = txtDescricaoJ.Text;
             jogoEditar.Lancamento = txtLancamento.Text;
-            jogoEditar.GeneroId = Convert.ToInt32(txtGeneroJ.Text);
+            //jogoEditar.GeneroId = Convert.ToInt32(txtGeneroJ.Text);
+            jogoEditar.GeneroId = GeneroBean.LocalizarPorID(Convert.ToInt32(ddpGenero.SelectedValue)).Id;
+
 
             JogoBean.Editar(jogoEditar);
             LimparCamposJogo();
-            CarregarGridGenero();
+            CarregarGridJogo();
 
             btnAddJ.Enabled = true;
             btnEditarJ.Enabled = false;
@@ -146,7 +171,7 @@ namespace Trabalho0106.View
             Jogo jogoEditar = (Jogo)Session["Jogo"];
             JogoBean.Excluir(jogoEditar);
             LimparCamposJogo();
-            CarregarGridGenero();
+            CarregarGridJogo();
 
             btnAddJ.Enabled = true;
             btnEditarJ.Enabled = false;
@@ -156,12 +181,7 @@ namespace Trabalho0106.View
         protected void CarregarGridGenero()
         {
             gdGenero.DataSource = GeneroBean.Listar();
-            gdGenero.DataBind();
-
-            foreach (Genero item in GeneroBean.Listar())
-            {
-                ddpGenero.Items.Add(item.Nome);
-            };
+            gdGenero.DataBind(); 
         }
 
         protected void CarregarGridJogo()
@@ -175,12 +195,20 @@ namespace Trabalho0106.View
             txtDescricaoG.Text = string.Empty;
             txtNomeG.Text = string.Empty;
         }
+
         protected void LimparCamposJogo()
         {
             txtDescricaoJ.Text = string.Empty;
             txtNomeJ.Text = string.Empty;
             txtLancamento.Text = string.Empty;
-            txtGeneroJ.Text = string.Empty;
+            //txtGeneroJ.Text = string.Empty;
+        }
+
+        protected void PreencherComboBox()
+        {
+            ddpGenero.Items.Clear();
+            ddpGenero.DataSource = GeneroBean.Listar();
+            ddpGenero.DataBind();
         }
     }
 }
