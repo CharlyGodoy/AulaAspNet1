@@ -40,7 +40,7 @@ namespace Web.Controllers
         // GET: Produtos/Create
         public ActionResult Create()
         {
-            ViewBag.CategoriaID = new SelectList(db.Categorias, "CategoriaID", "Nome");
+            ViewBag.CategoriaID = new SelectList(db.Categorias, "CategoriaID", "Nome");//SQL,Valor utiliado, Oque irá aparecer
             return View();
         }
 
