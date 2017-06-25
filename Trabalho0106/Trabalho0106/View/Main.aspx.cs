@@ -62,7 +62,7 @@ namespace Trabalho0106.View
             catch (Exception)
             {
                 string msg = "Não foi possivel encontrar nenhum genero com o nome: " + nome;
-                Response.Write("<script>alert('"+ msg qualquer +"');</script>");
+                Response.Write("<script>alert('"+ msg +"');</script>");
             }
             
         }
